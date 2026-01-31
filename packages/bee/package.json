@@ -1,0 +1,11 @@
+{
+  "name": "bee",
+  "version": "1.0.0",
+  "main": "main.min.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,37 @@
+{
+  "name": "weaver",
+  "version": "1.0.0",
+  "description": "api teser essential for any developer",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandopulle/weaver.git"
+  },
+  "keywords": [
+    "api",
+    "test",
+    "mock"
+  ],
+  "author": "yohan fernandopulle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandopulle/weaver/issues"
+  },
+  "homepage": "https://github.com/fernandopulle/weaver#readme",
+  "workspaces": [
+    "packages/bird",
+    "packages/spider",
+    "packages/ant",
+    "packages/bee"
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

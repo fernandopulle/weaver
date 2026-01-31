@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+/lib-cov
+
+# Testing
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+build
+
+# Environment
+.env
+.npmrc
