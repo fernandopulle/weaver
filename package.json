@@ -25,12 +25,15 @@
     "packages/bee"
   ],
   "scripts": {
+    "dev": "npm start -w bird",
     "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint": "^8.45.0"
+    "@types/node": "^25.1.0",
+    "eslint": "^8.45.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
   },
-  "dependencies": {},
   "engines": {
     "node": ">=14.0.0"
   }
