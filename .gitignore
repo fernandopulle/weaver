@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 /lib-cov
+dist/
 
 # Testing
 *.seed

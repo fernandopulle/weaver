@@ -14,7 +14,13 @@ pids
 logs
 results
 build
+dist
 
 # Environment
 .env
 .npmrc
+
+# Generated
+src/*.js
+src/*.js.map
+.react-router/
