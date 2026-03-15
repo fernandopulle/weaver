@@ -4,7 +4,7 @@
   "main": "src/entry.main.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx -y concurrently -n browser,main \"npm run start:dev-server\" \"npm run start:electron\"",
+    "start": "npx -y concurrently -n browser,main --kill-others \"npm run start:electron\"",
     "start:dev-server": "vite dev",
     "start:electron": "cross-env NODE_ENV=development  esr esbuild.entrypoints.ts && electron .",
     "build": "vite build",
