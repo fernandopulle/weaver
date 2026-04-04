@@ -1,25 +1,16 @@
-
-import { log } from 'console';
 import electron, { app, BrowserWindow, session } from 'electron';
 import { isMac } from './common/constants';
 
-import path from 'path';
+
+
 
 
 app.on('ready', () => {
-    const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-        },
-    });
-    
+createWindow();    
 
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
 });
 
@@ -36,7 +27,7 @@ app.on('activate', () => {
 });
 
 app.on('quit', () => {
-    log('Application is quitting');
+    console.log('Performing cleanup before quitting...');
 });
 
 function createWindow() {
@@ -48,5 +39,7 @@ function createWindow() {
             contextIsolation: false,
         },
     });
+
+    mainWindow.loadFile('src/ui/index.html');
 
 }
