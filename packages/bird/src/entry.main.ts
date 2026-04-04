@@ -1,12 +1,13 @@
 import electron, { app, BrowserWindow, session } from 'electron';
 import { isMac } from './common/constants';
+import * as windowUtils from './main/window-util';
 
 
 
 
+app.on('ready', async() => {
 
-app.on('ready', () => {
-createWindow();    
+    windowUtils.createWindow();
 
 
     // Open the DevTools.
@@ -20,9 +21,13 @@ app.on('window-all-closed', () => {
     }
 });
 
-app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
+app.on('activate', (_error, hasVisibleWindows) => {
+    if (!hasVisibleWindows) {
+        try {
+            windowUtils.createWindow();
+        } catch (error) {
+            console.error('Error creating window on activate:', error);
+        }
     }
 });
 
@@ -30,16 +35,3 @@ app.on('quit', () => {
     console.log('Performing cleanup before quitting...');
 });
 
-function createWindow() {
-    const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-        },
-    });
-
-    mainWindow.loadFile('src/ui/index.html');
-
-}
